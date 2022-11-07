@@ -1,0 +1,151 @@
+:root {
+  font-size: 62.5%;
+
+  --black-0: #000000;
+  --black-1: #0d0d0d;
+  --black-2: #201F1E;
+  --black-3: #353432;
+  --smothed-shadow: rgba(0, 0, 0, 0.25);
+  --smothed-black: rgba(0, 0, 0, 0.75);
+
+  --white: #FFFFFF;
+  --smothed-white: #F0F0F0;
+
+  --gray-1: #605E5C;
+  --gray-2: #8A8886;
+  --gray-3: #A19F9D;
+  --gray-4: #DDDDDD;
+  --gray-5: #EDEBE9;
+  --gray-6: #F2F2F2;
+  --gray-7: #FCFCFC;
+
+  --blue: #0D2960;
+  --blue-2: #143d8d;
+  --blue-3: #183ab6;
+  --blue-4: #1c46df;
+  --blue-5: #2855fa;
+  --blue-6: #5276fb;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* SCROLLBAR */
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-3) transparent;
+}
+
+/* Works on Chrome, Edge, and Safari */
+html::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--gray-3);
+  border-radius: 2rem;
+}
+
+body {
+  font: 1.6rem 'Inter', sans-serif;
+  background-color: var(--blue);
+
+  min-height: 100vh;
+}
+
+
+/* HEADER / nav */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 6rem;
+  background-color: var(--gray-6);
+}
+
+header h2 a {
+  font-weight: 600;
+  font-size: 2.2rem;
+}
+
+header a {
+  color: var(--blue-2);
+  text-decoration: none;
+  display: flex;
+  gap: 0.8rem;
+}
+
+header a img {
+  width: 2rem;
+  height: 2rem;
+}
+
+
+/* MAIN */
+main {
+  margin: 7.2rem 6rem;
+  padding: 3.2rem 8.4rem;
+  border-radius: 0.4rem;
+  background-color: var(--gray-7);
+}
+
+
+.message {
+  margin: 2rem auto;
+  width: fit-content;
+  border: 0.1rem solid var(--gray-4);
+  border-radius: 0.6rem;
+  padding: 1rem;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.message:hover {
+  background-color: var(--gray-6);
+  cursor: pointer;
+}
+
+.message.hidden {
+  display: none;
+}
+
+
+/* Responsividade */
+/* 768px */
+@media (max-width: 48rem) {
+  header {
+    padding: 2rem 3rem;
+  }
+
+  main {
+    margin: 7.2rem 3rem;
+    padding: 3.2rem;
+  }
+}
+
+/* 576px */
+@media (max-width: 36rem) {
+  header {
+    padding: 2rem 1.5rem;
+  }
+
+  main {
+    margin: 3.6rem 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+/* 426px */
+@media (max-width: 26.6rem) {
+  header h2 a {
+    font-size: 2rem;
+  }
+}

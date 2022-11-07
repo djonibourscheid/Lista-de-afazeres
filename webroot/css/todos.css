@@ -1,0 +1,67 @@
+/* General */
+.container {
+  display: flex;
+  gap: 4rem;
+  width: 100%;
+}
+
+
+/* Only View page use this */
+.card .card-title {
+  font-weight: 600;
+  font-size: 2.4rem;
+  color: var(--blue-2);
+}
+
+.card .card-body-wrapper>h3 {
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: var(--blue-3);
+}
+
+.card .card-body {
+  font-size: 1.6rem;
+  color: var(--black-2);
+  padding-left: 1rem;
+  margin: 0.5rem 0 0 0.5rem;
+  position: relative;
+}
+
+.card-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.25rem;
+  height: 100%;
+  border-radius: 1rem;
+  background-color: var(--blue-6);
+}
+
+.card .card-body>p {
+  text-indent: 1rem;
+}
+
+.card .card-body>p:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+
+/* Responsividade */
+/* 944px */
+@media (max-width: 59rem) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+/* 480px */
+@media (max-width: 30rem) {
+  .card .card-title {
+    font-size: 2.2rem;
+  }
+
+  .card .card-body>p {
+    font-size: 1.5rem;
+  }
+}

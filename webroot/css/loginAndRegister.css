@@ -1,0 +1,188 @@
+:root {
+  font-size: 62.5%;
+
+  --black-0: #000000;
+  --black-2: #131313;
+  --black-3: #201F1E;
+  --black-25: rgba(0, 0, 0, 0.25);
+
+  --white: #FFFFFF;
+  --smothed-white: #F0F0F0;
+  --blue-100: #2855fa;
+  --blue-80: #5276fb;
+  --red: #fa2828;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:-webkit-autofill,
+:-webkit-autofill:hover,
+:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: var(--black-3);
+  transition: background-color 10000s ease-in-out 0s;
+}
+
+
+body {
+  font: 1.6rem 'Inter', sans-serif;
+  background: url(../img/login-page-desktop.jpg) center/cover no-repeat;
+  height: 100vh;
+}
+
+.aling-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: var(--smothed-white);
+  padding: 4rem 3rem;
+  border-radius: 2rem;
+  box-shadow: 0.4rem 0.4rem 1rem var(--black-25);
+  min-width: 28rem;
+  max-width: 47.5rem;
+  width: 75%;
+  min-height: 37.5rem;
+}
+
+form {
+  width: 100%;
+  gap: 2.2rem;
+}
+
+.field {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+}
+
+.field input {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0 0 0.5rem;
+  border: none;
+  font: 700 1.6rem 'Inter', sans-serif;
+  color: var(--black-3);
+  background-color: transparent;
+  outline: none;
+}
+
+.field label {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  border-bottom: 0.1rem solid var(--black-3);
+
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  color: var(--black-3);
+}
+
+.field label::after {
+  content: "";
+  position: absolute;
+  bottom: -0.15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0.25rem;
+  background-color: var(--blue-80);
+  border-radius: 1rem;
+  transition: width 0.25s ease-in-out;
+}
+
+.label-content {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.25rem;
+  transition: all 0.25s ease-in-out;
+}
+
+.field input:focus+label .label-content,
+.field input:valid+label .label-content,
+input.hasContent+label .label-content {
+  transform: translateY(-150%);
+  color: var(--blue-80);
+  font-size: 1.4rem;
+}
+
+.field input:focus+label::after,
+.field input:valid+label::after {
+  width: 100%;
+}
+
+
+/* Field error */
+.field.error {
+  margin-bottom: 2.2rem;
+}
+
+.field.error .label-content {
+  color: var(--red) !important;
+}
+
+.field.error label::after {
+  background-color: var(--red) !important;
+}
+
+.field.error .error-message {
+  color: var(--black-2);
+}
+
+
+
+.login_btn {
+  background-color: var(--blue-100);
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: var(--white);
+  padding: 1rem 4.5rem;
+  margin: 2rem 0 4rem;
+}
+
+.login_btn,
+.register_link {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.login_btn:hover,
+.register_link:hover {
+  opacity: 0.8;
+}
+
+.register_link {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  color: var(--black-100);
+  text-decoration: none;
+}
+
+.register_link span {
+  text-decoration: underline;
+}
+
+
+/* Responsividade */
+/* 426px */
+@media (max-width: 26.6rem) {
+  .container {
+    width: 85%;
+  }
+}
